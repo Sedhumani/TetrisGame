@@ -94,7 +94,7 @@ a:hover {
     background: #FF8000;
 }
 
-#next-tetromino {
+#next-tetrisblock {
     width: 125px;
     height: 75px;
     margin: auto;
@@ -103,7 +103,7 @@ a:hover {
     position: relative;
 }
 
-#next-tetromino > div {
+#next-tetrisblock > div {
     width: 25px;
     height: 25px;
     position: absolute;

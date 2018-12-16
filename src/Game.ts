@@ -57,7 +57,7 @@ var Game = /** @class */ (function () {
     };
 
     Game.prototype._drop = function () {
-        this._tetromisblock.move(0, 1); 
+        this._tetrisblock.move(0, 1); 
         if (this._stage.isCollision(this._tetrisblock)) {
             this._tetrisblock.move(0, -1);
             this._tetrisblock.remove();
