@@ -1,0 +1,322 @@
+body {
+    font-family: sans-serif;
+    margin-bottom: 60px;
+}
+
+.container {
+    width: 1280px;
+    margin: auto;
+    text-align: center;
+}
+
+h2 {
+    color: #878787;
+}
+
+a {
+    color: #878787;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+#game {
+    margin-top: 30px;
+}
+
+.infos {
+    position: relative;
+	left: 450px;
+    width: 150px;
+    height: 600px;
+    background: #E2E2E2;
+    margin: auto;
+    border: 2px solid #606060;
+    border-left: none;
+    box-sizing: border-box;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.info-section {
+    margin-top: 15px;
+    color: #545454;
+    font-weight: bold;
+    text-transform: none;
+}
+
+#level, #score, #cleared, #best-score {
+    margin-top: 5px;
+    font-size: 30px;
+    color: #2D3236;
+}
+
+#start-pause {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 42px;
+}
+
+#start-pause button {
+    background: none;
+    border: none;
+    width: 100%;
+    height: 100%;
+    padding: 0;
+    font-family: sans-serif;
+    font-size: 20px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    background: #606060;
+    color: white;
+    padding-top: 2px;
+    cursor: pointer;
+    transition: background 300ms;
+}
+
+#start-pause button:focus {
+    outline: none;
+}
+
+#start-pause button#start {
+    background: #2CC990;
+}
+#start-pause button#start:hover {
+    background: #008AFF;
+}
+
+#start-pause button#pause {
+    background: #F34344;
+}
+#start-pause button#pause:hover {
+    background: #FF8000;
+}
+
+#next-tetromino {
+    width: 125px;
+    height: 75px;
+    margin: auto;
+    margin-top: 10px;
+    background: #373C40;
+    position: relative;
+}
+
+#next-tetromino > div {
+    width: 25px;
+    height: 25px;
+    position: absolute;
+}
+
+.I > div {
+    background: #FF8000;
+}
+
+.I .block1 {
+    top: 25px;
+    left: 12px;
+}
+
+.I .block2 {
+    top: 25px;
+    left: 38px;
+}
+
+.I .block3 {
+    top: 25px;
+    left: 64px;
+}
+
+.I .block4 {
+    top: 25px;
+    left: 90px;
+}
+
+.J > div {  
+    background: #2CC990;
+}
+
+.J .block1 {
+    top: 12px;
+    left: 25px;
+}
+
+.J .block2 {
+    top: 38px;
+    left: 25px;
+}
+
+.J .block3 {
+    top: 38px;
+    left: 51px;
+}
+
+.J .block4 {
+    top: 38px;
+    left: 77px;
+}
+
+.L > div {  
+    background: #F34344;
+}
+
+.L .block1 {
+    top: 38px;
+    left: 25px;
+}
+
+.L .block2 {
+    top: 38px;
+    left: 51px;
+}
+
+.L .block3 {
+    top: 38px;
+    left: 77px;
+}
+
+.L .block4 {
+    top: 12px;
+    left: 77px;
+}
+
+.O > div {  
+    background: #FFDF00;
+}
+
+.O .block1 {
+    top: 12px;
+    left: 38px;
+}
+
+.O .block2 {
+    top: 38px;
+    left: 38px;
+}
+
+.O .block3 {
+    top: 12px;
+    left: 64px;
+}
+
+.O .block4 {
+    top: 38px;
+    left: 64px;
+}
+
+.S > div {  
+    background: #CCDCE4;
+}
+
+.S .block1 {
+    top: 38px;
+    left: 25px;
+}
+
+.S .block2 {
+    top: 38px;
+    left: 51px;
+}
+
+.S .block3 {
+    top: 12px;
+    left: 51px;
+}
+
+.S .block4 {
+    top: 12px;
+    left: 77px;
+}
+
+.T > div {  
+    background: #008AFF;
+}
+
+.T .block1 {
+    top: 38px;
+    left: 25px;
+}
+
+.T .block2 {
+    top: 38px;
+    left: 51px;
+}
+
+.T .block3 {
+    top: 12px;
+    left: 51px;
+}
+
+.T .block4 {
+    top: 38px;
+    left: 77px;
+}
+
+.Z > div {  
+    background: #FCB941;
+}
+
+.Z .block1 {
+    top: 12px;
+    left: 25px;
+}
+
+.Z .block2 {
+    top: 38px;
+    left: 51px;
+}
+
+.Z .block3 {
+    top: 12px;
+    left: 51px;
+}
+
+.Z .block4 {
+    top: 38px;
+    left: 77px;
+}
+
+/**
+ * Canvas container and overlay
+ */
+#canvas-container {
+    display: inline-block;
+    position: relative;
+    height: 600px;
+}
+
+#overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    transition: background 300ms;
+}
+
+#overlay #overlay-info {
+    display: none;
+}
+#overlay.active {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#overlay.active #overlay-info {
+    color: white;
+    vertical-align: middle;
+    display: inline-block;
+    font-size: 40px;
+    animation: blinker 2s linear infinite;
+}
+
+@keyframes blinker {  
+  75% { opacity: 0.0; }
+}
+
+#overlay.active:before {
+    content: "";
+    display: inline-block;
+    height: 100%;
+    vertical-align: middle;
+}
+
+
