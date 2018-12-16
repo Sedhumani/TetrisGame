@@ -1,7 +1,7 @@
 var Tetrisblock_1 = require("./Tetrisblock");
 var Constants_1 = require("./Constants");
 var Stage_1 = require("./Stage");
-
+var ScoreManager_1 = require("./ScoreManager");
 var Game = /** @class */ (function () {
     function Game() {
         console.log(PIXI);
@@ -18,6 +18,7 @@ var Game = /** @class */ (function () {
         this._newTetrisblock();
         this._delay = 300;
         this._timer = new Date().getTime();
+        this._scoreManager = new ScoreManager_1.default();
         this._requestId = undefined; 
         this._paused = false;
         this._start();
